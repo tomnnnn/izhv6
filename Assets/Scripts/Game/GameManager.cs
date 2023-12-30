@@ -3,19 +3,24 @@ using Cysharp.Threading.Tasks.Triggers;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Runtime.InteropServices;
 
 /// <summary>
 /// The main game manager GameObject.
 /// </summary>
 public class GameManager : MonoBehaviour
 {
+
+[DllImport("__Internal")]
+private static extern void reload();
+
 #region Editor
 
-    // References to GameObjects within the scene.
-    [ Header("Game Objects") ]
+// References to GameObjects within the scene.
+[Header("Game Objects") ]
 
-    [Tooltip("Player character")]
-    public GameObject playerCharacter;
+[Tooltip("Player character")]
+public GameObject playerCharacter;
     
 #endregion // Editor
 
@@ -165,13 +170,16 @@ public class GameManager : MonoBehaviour
 		 *       WebGL memory or just refreshing the page by reloading the 
 		 *       current URL ("OpenURL", "absoluteURL").
          */
-       
+
 #if UNITY_EDITOR
         // Quitting in Unity Editor: 
-#elif UNITY_WEBPLAYER
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_WEBPLAYER || UNITY_WEBGL
         // Quitting in the WebGL build: 
+        reload();
 #else // !UNITY_WEBPLAYER
         // Quitting in all other builds: 
+        Application.Quit();
 #endif
     }
 }

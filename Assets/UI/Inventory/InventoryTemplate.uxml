@@ -4,7 +4,7 @@
         <ui:VisualElement name="Inventory" style="background-color: rgb(29, 29, 29); height: 40%; width: 100%;">
             <ui:VisualElement name="Header" class="header" style="flex-direction: row; height: 10%; min-height: 50px; max-height: 100px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-bottom-color: rgb(255, 124, 0); border-bottom-width: 1px;">
                 <ui:VisualElement name="HeaderLeft" style="flex-grow: 1; align-items: flex-start; padding-left: 10px; padding-right: 10px; padding-top: 0; padding-bottom: 0; flex-direction: row;">
-                    <ui:Label text="INVENTORY" display-tooltip-when-elided="true" name="HeaderText" style="flex-grow: 1; -unity-text-align: middle-left; height: 100%; color: rgb(210, 210, 210);" />
+                    <ui:Label text="INVENTORY" display-tooltip-when-elided="true" name="HeaderText" style="flex-grow: 1; -unity-text-align: middle-left; height: 100%; color: rgb(210, 210, 210); opacity: 1; display: flex; overflow: visible; visibility: visible; flex-basis: auto;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="HeaderRight" style="align-items: flex-end; flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 0; padding-bottom: 0; flex-direction: row-reverse;">
                     <ui:VisualElement name="CurrencyContainer" style="flex-grow: 0; height: 100%; flex-direction: row-reverse; padding-left: 32px; align-items: center; justify-content: flex-start; padding-right: 10px; width: 25%; min-width: 128px;">
